@@ -1,0 +1,158 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>KIM主页 - 多引擎搜索</title>
+		<meta name="keywords" content="多引擎搜索,元搜索,metasearch,并发搜索,全搜,多搜" />
+		<meta name="description" content="多引擎搜索,元搜索,metasearch,并发搜索,全搜,多搜" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<link href="__PUBLIC__/css/meta-search-style-min.css" rel="stylesheet" type="text/css" />
+		
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+
+<!--[if lt IE 9]>
+<script src="__PUBLIC__/js/html5shiv.js"></script>
+<![endif]-->
+	</head>
+	<body class="body">
+		<div id="meta-search-panel" class="meta-search-panel">
+			<div id="meta-search-header" class="meta-search-header">
+				<div id="meta-search-header-left" class="meta-search-header-left">
+					<a href="<{:U('Home/Index/index')}>" title="点击回到1258主页" id="meta-search-close" class="meta-search-close">
+						<span class="icon close-icon"></span>
+					</a>
+				</div>
+				<div id="meta-search-header-body" class="meta-search-header-body">
+					<div id="meta-search-box" class="meta-search-box">
+						<span id="meta-search-input-box" class="meta-search-input-box">
+							<input id="meta-search-input" tabIndex="1" type="text" value="<{$q}>" maxlength="140" class="meta-search-input" autocomplete="off" />
+						</span> 
+						<span id="meta-search-button-box" class="meta-search-button-box" title="搜索"> 
+							<input type="button" tabIndex="2" id="meta-search-button" class="meta-search-button" value=" " />
+						</span>
+					</div>
+					<div id="meta-search-suggest" class="meta-search-suggest" style="display:none;">
+                    
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">dd373游戏交易平台</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">大众点评</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">dddd</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">滴滴打车官网</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">dd373</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">钉钉电脑版</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">当代东方</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">单点登录</span>
+	</div>
+	<div class="meta-suggest-item">
+		<span class="meta-suggest-keyword">ddd 领域驱动设计</span>
+	</div>
+	<div class="meta-suggest-item meta-suggest-item-end">
+		<span class="meta-suggest-keyword">带带大师兄</span>
+	</div>
+
+                    </div>
+                    
+				</div>
+				<div id="meta-search-header-right" class="meta-search-header-right">
+					<ul id="meta-search-menu" class="meta-search-menu">
+						<li id="meta-search-menu-baidu" onclick="xuan('metaSearchbaiduIframe')" class="meta-search-menu-item">
+							<span class="icon baidu-icon" ></span>
+                            <span class="meta-search-menu-cursor b1"></span>
+						</li>
+						<li id="meta-search-menu-bing" onclick="xuan('metaSearchbingIframe')" class="meta-search-menu-item">
+							<span class="icon bing-icon" ></span>
+                            <span class="meta-search-menu-cursor s1"></span>
+						</li>
+						<li id="meta-search-menu-sogou" onclick="xuan('metaSearchsogouIframe')" class="meta-search-menu-item">
+							<span class="icon sogou-icon" ></span>
+                            <span class="meta-search-menu-cursor a1"></span>
+						</li>
+						<li id="meta-search-menu-haoso" onclick="xuan('metaSearchhaosoIframe')" class="meta-search-menu-item">
+							<span class="icon haoso-icon" ></span>
+                            <span class="meta-search-menu-cursor d1"></span>
+						</li>
+						
+					</ul>
+					
+				</div>
+			</div>
+			<div id="meta-search-body" class="meta-search-body">
+              <iframe id="metaSearchbaiduIframe" style="top: 57px; height: calc(100% + 45px);" class="meta-search-iframe" src="https://www.baidu.com/s?wd=<{$q}>" height="100%" align="top"></iframe>
+              <iframe style="display: none; top: 54px; height: calc(100% + 5px);" id="metaSearchbingIframe" class="meta-search-iframe" src="https://www.bing.com/search?q=<{$q}>" height="100%" align="top"></iframe>
+              <iframe style="display: none; top: 55px; height: calc(100% + 5px);" id="metaSearchsogouIframe" class="meta-search-iframe" src="https://www.sogou.com/web?query=<{$q}>" height="100%" align="top"></iframe>
+              <iframe style="display: none; top: 57px; height: calc(100% + 5px);" id="metaSearchhaosoIframe" class="meta-search-iframe" src="https://www.so.com/s?q=<{$q}>" height="100%" align="top"></iframe>
+            </div>
+		</div>
+		<!--[if !IE]> -->
+		
+		<!-- <![endif]-->
+		<!--[if lt IE 9]>
+		<script src="__PUBLIC__/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+		<![endif]-->
+		<!--[if IE]>
+		<script type="text/javascript">window.jQuery || document.write("<script src='js/jquery-3.1.1.min.js'>"+"<"+"/script>");</script>
+		<![endif]-->
+<script src="__PUBLIC__/js/jquery-3.1.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#meta-search-menu-bing").click(function(){
+  $('.meta-search-menu-cursor.s1').show();
+  $('.meta-search-menu-cursor.a1').hide();
+  $('.meta-search-menu-cursor.d1').hide();
+  $('.meta-search-menu-cursor.b1').hide();
+  });
+  
+  $("#meta-search-menu-baidu").click(function(){
+  $('.meta-search-menu-cursor.s1').hide();
+  $('.meta-search-menu-cursor.a1').hide();
+  $('.meta-search-menu-cursor.d1').hide();
+  $('.meta-search-menu-cursor.b1').show();
+  });
+  
+  $("#meta-search-menu-sogou").click(function(){
+  $('.meta-search-menu-cursor.s1').hide();
+  $('.meta-search-menu-cursor.a1').show();
+  $('.meta-search-menu-cursor.d1').hide();
+  $('.meta-search-menu-cursor.b1').hide();
+  });
+  
+  $("#meta-search-menu-haoso").click(function(){
+  $('.meta-search-menu-cursor.s1').hide();
+  $('.meta-search-menu-cursor.a1').hide();
+  $('.meta-search-menu-cursor.d1').show();
+  $('.meta-search-menu-cursor.b1').hide();
+  });
+
+  
+});
+  
+
+$("#meta-search-button").click(function(){
+	var list="<{:U('Home/Index/find', array('q'=>'1'))}>";
+	var ab=list.substr(0,list.length-6);
+	// alert(ab+$('#meta-search-input').val());
+	location.href=ab+$('#meta-search-input').val();
+})
+function xuan(id){
+	$(".meta-search-iframe").css('display','none');
+	$("#"+id).css('display','block');
+}
+</script>
+	</body>
+</html>

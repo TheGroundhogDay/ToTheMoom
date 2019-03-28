@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>导航管理</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="__PUBLIC__/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="__PUBLIC__/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="__PUBLIC__/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="__PUBLIC__/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <!-- <link href="__PUBLIC__/css/style.min.css" rel="stylesheet"> -->
+
+    <!-- Custom Fonts -->
+    <link href="__PUBLIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3 class="page-header">内网导航分类</h3>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <a href="<{:U('Admin/Wang/addd')}>">添加分类</a>
+                                </div>
+                                <!-- /.panel-heading -->
+                                <div class="panel-body">
+                                    <div class="dataTable_wrapper">
+                                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                            <thead>
+                                                <tr>
+                                                    <th>序号</th>
+                                                    <th>分类名称</th>
+                                                    <th>操作</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <volist name="list" id="v">
+                                                <tr>
+                                                    <td><{$i}></td>
+                                                    <td><{$v.name}></td>
+                                                    <td>
+                                                        <a href="<{:U('Admin/Wang/zilei', array('did'=>$v['id']))}>">子分类管理</a>
+                                                        <a href="<{:U('Admin/Wang/editd', array('id'=>$v['id']))}>">修改</a>
+                                                        <a href="#" onclick="tiao(<{$v['id']}>)">删除</a>
+                                                    </td>
+                                                </tr>
+                                            </volist>
+                                                <!-- <tr class="odd">
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 4.0</td>
+                                                    <td>Win 95+</td>
+                                                    <td class="center">4</td>
+                                                    <td class="center">X</td>
+                                                </tr>
+                                                <tr class="even">
+                                                    <td>Trident</td>
+                                                    <td>Internet Explorer 5.0</td>
+                                                    <td>Win 95+</td>
+                                                    <td class="center">5</td>
+                                                    <td class="center">C</td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- /.table-responsive -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="__PUBLIC__/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="__PUBLIC__/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="__PUBLIC__/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+    <script src="__PUBLIC__/js/layer/layer.js"></script>
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+        $(document).ready(function() {
+            $('#dataTables-example').DataTable({
+                responsive: true,
+                "order": [[0, "desc" ]],
+                //"lengthChange": 100
+                "bStateSave": true
+            });
+            // $('#dataTables-example').dataTable( {
+            //      "lengthChange": 100
+            //    } );   
+        });
+    </script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="__PUBLIC__/js/style.min.js"></script>
+    <script>
+    function tiao(id)
+    {
+        var nid=parseInt(id);
+        layer.msg('你确定要删除么？', {
+        time: 0 //不自动关闭
+        ,btn: ['确认', '取消']
+        ,yes: function(index){
+            layer.close(index);
+            var list="<{:U('Admin/Wang/deld', array('id'=>'1'))}>";
+            var ab=list.substr(0,list.length-6);
+            // alert(ab+nid);
+          location.href=ab+nid; 
+        }
+        });
+        
+    }
+   
+    // var f=<{$f}>;
+    if(f==1)
+    {
+        layer.alert('删除成功',{icon: 1});
+    }
+    if(f==2)
+    {
+        layer.alert('删除失败',{icon: 2});
+    }
+    
+    </script>
+</body>
+
+</html>

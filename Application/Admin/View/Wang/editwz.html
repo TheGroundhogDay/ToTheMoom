@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link href="__PUBLIC__/admin/css/style.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/js/jquery-1.12.0.min.js"></script>
+<script src="__PUBLIC__/js/layer/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/utf8-php/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/utf8-php/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/ueditor/utf8-php/lang/zh-cn/zh-cn.js"></script>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/diyUpload/css/webuploader.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/diyUpload/css/diyUpload.css">
+<script type="text/javascript" src="__PUBLIC__/diyUpload/js/webuploader.html5only.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/diyUpload/js/diyUpload.js"></script>
+<style>
+  #demo{ width:880px; min-height:200px;}
+</style>
+</head>
+
+<body>
+    <div class="formbody">
+    <form action="" method="post" enctype="multipart/form-data" onsubmit="return check()">
+    <ul class="forminfo">
+    <li><label>名称</label><input name="name" value="<{$one.name}>" id="name" type="text" class="dfinput" /><input type="hidden" name="id" value="<{$id}>" /></li>
+    <li><label>地址</label><input name="url" value="<{$one.url}>" id="url" type="text" class="dfinput" /><i></i></li>
+    <li><label>图标</label><input id="photo" name="photo" type="file" style="line-height:34px;height:34px;padding-top:7px;" /><i>建议上传36px×36px像素图片</i></li>
+    <li><input name="" type="submit" class="btn" value="保存"/></li>
+    </ul>
+    </form>
+    </div>
+<script>
+ function check()
+  {
+    if($('#name').val()=='')
+    {
+       layer.msg('请填写网站名称', {
+                      time: 1000
+                  });
+       return false;
+    }
+    else if($('#url').val()=='')
+    {
+       layer.msg('请填写网站地址', {
+                      time: 1000
+                  });
+       return false;
+    }
+  }   
+
+</script>
+
+</body>
+
+</html>
